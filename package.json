@@ -1,0 +1,24 @@
+{
+  "name": "i4trust-dt-4-aero-experiment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/faubourg-numerique/i4trust-dt-4-aero-experiment.git"
+  },
+  "author": "Faubourg Numerique",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/faubourg-numerique/i4trust-dt-4-aero-experiment/issues"
+  },
+  "homepage": "https://github.com/faubourg-numerique/i4trust-dt-4-aero-experiment#readme",
+  "dependencies": {
+    "axios": "^1.3.4",
+    "dotenv": "^16.0.3",
+    "ishare-tools-for-i4trust": "github:faubourg-numerique/ishare-tools-for-i4trust-js"
+  }
+}
