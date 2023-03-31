@@ -17,14 +17,14 @@ const DELEGATION_REQUEST = {
                             resource: {
                                 type: "RadioEquipmentMeasurement",
                                 identifiers: [
-                                    "*"
+                                    "urn:ngsi-ld:RadioEquipmentMeasurement:46ea24d3-ca70-4155-a1c7-6aed8aa39d06"
                                 ],
                                 attributes: [
-                                    "*"
+                                    "temperature"
                                 ]
                             },
                             actions: [
-                                "GET"
+                                "POST"
                             ]
                         },
                         rules: [
@@ -80,20 +80,31 @@ async function main() {
 
     console.log("Requesting context broker through api gateway...");
 
-    var url = process.env.LA_ISLA_API_GATEWAY_URL + "/ngsi-ld/v1/entities?type=RadioEquipmentMeasurement"
+    var url = process.env.LA_ISLA_API_GATEWAY_URL + "/ngsi-ld/v1/entities/urn:ngsi-ld:RadioEquipmentMeasurement:46ea24d3-ca70-4155-a1c7-6aed8aa39d06/attrs"
 
     var config = {
         headers: {
-            Authorization: `Bearer ${delegationToken}`
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${delegationToken}`,
+            Link: "<https://datamodels.ouranos-ws.com/la-isla/26/context.jsonld>"
         }
     };
 
-    var response = await axios.get(url, config);
-    var entities = response.data;
+    var data = {
+        temperature: {
+            observedAt: "2023-03-31T12:00:00.000Z",
+            type: "Property",
+            unit: {
+                type: "Property",
+                value: "C"
+            },
+            value: 22
+        }
+    };
+
+    await axios.post(url, data, config);
 
     console.log("OK\n");
-
-    console.log(entities);
 }
 
 main();
