@@ -29,6 +29,8 @@ npm install
 
 - Copy the **.env** file to this directory
 
+> Make sure the name of the environment file is **.env** and not **env**
+
 ## Usage
 
 - Run the script
