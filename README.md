@@ -24,7 +24,7 @@ cd i4trust-dt-4-aero-experiment
 - Install dependencies
 
 ```
-npm install
+npm ci
 ```
 
 - Copy the **.env** file to this directory
@@ -37,4 +37,18 @@ npm install
 
 ```
 node ./index.js
+```
+
+## Update
+
+- Pull the changes
+
+```
+git pull
+```
+
+- Update dependencies
+
+```
+npm ci
 ```

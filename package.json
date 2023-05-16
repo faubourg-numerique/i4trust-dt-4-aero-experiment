@@ -19,6 +19,6 @@
   "dependencies": {
     "axios": "^1.3.4",
     "dotenv": "^16.0.3",
-    "ishare-tools-for-i4trust": "github:faubourg-numerique/ishare-tools-for-i4trust-js"
+    "ishare-tools-for-i4trust": "github:faubourg-numerique/ishare-tools-for-i4trust-js#1.1.0"
   }
 }
